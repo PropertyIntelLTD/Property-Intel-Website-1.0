@@ -1,0 +1,220 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+@keyframes glow {
+  0% { filter: drop-shadow(0 0 5px rgba(99, 102, 241, 0.5)); }
+  50% { filter: drop-shadow(0 0 20px rgba(99, 102, 241, 0.8)); }
+  100% { filter: drop-shadow(0 0 5px rgba(99, 102, 241, 0.5)); }
+}
+
+.animate-float {
+  animation: float 12s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 14s ease-in-out infinite 2s;
+}
+
+.hover\:shadow-glow:hover {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* 3D Transform Classes */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.rotate-x-60 {
+  transform: rotateX(60deg);
+}
+
+.scale-y-40 {
+  transform: scaleY(0.4);
+}
+
+.origin-bottom {
+  transform-origin: bottom;
+}
+ 
+@layer base {
+  :root {
+    --background: 210 33% 98%;
+    --foreground: 215 28% 17%;
+    --card: 0 0% 100%;
+    --card-foreground: 215 28% 17%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 28% 17%;
+    --primary: 210 29% 24%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 214 32% 29%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 210 79% 53%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 210 29% 24%;
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 215 28% 17%;
+    --foreground: 210 40% 98%;
+    --card: 215 28% 17%;
+    --card-foreground: 210 40% 98%;
+    --popover: 215 28% 17%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 29% 24%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 214 32% 29%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 33% 18%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 210 79% 53%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 33% 18%;
+    --input: 217 33% 18%;
+    --ring: 215 28% 17%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.nav-link {
+  @apply relative px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:text-primary;
+}
+
+.nav-link::after {
+  content: '';
+  @apply absolute bottom-0 left-0 h-0.5 w-0 bg-primary transition-all duration-300;
+}
+
+.nav-link:hover::after {
+  @apply w-full;
+}
+
+.nav-link.active {
+  @apply text-primary font-semibold;
+}
+
+.nav-link.active::after {
+  @apply w-full;
+}
+
+/* Property cards with hover effects */
+.property-card {
+  @apply bg-white rounded-lg overflow-hidden shadow-sm transition-all duration-300 hover:shadow-lg border border-transparent hover:border-primary/10;
+}
+
+.property-card .img-container {
+  @apply relative overflow-hidden;
+}
+
+.property-card img {
+  @apply transition-transform duration-500 h-full w-full object-cover;
+}
+
+.property-card:hover img {
+  @apply transform scale-105;
+}
+
+.property-card .property-badge {
+  @apply absolute top-4 right-4 z-10 px-3 py-1 bg-white/90 text-primary rounded-full text-sm font-medium shadow-sm;
+}
+
+.property-card .property-content {
+  @apply p-6;
+}
+
+/* Button Animations */
+.btn-hover-slide {
+  @apply relative overflow-hidden z-10;
+}
+
+.btn-hover-slide::before {
+  content: '';
+  @apply absolute top-0 left-0 w-full h-0 bg-primary/10 transition-all duration-300 -z-10;
+}
+
+.btn-hover-slide:hover::before {
+  @apply h-full;
+}
+
+/* Service Card Styles */
+.service-card {
+  @apply p-6 rounded-lg transition-all duration-300 hover:shadow-md relative overflow-hidden;
+}
+
+.service-card::before {
+  content: '';
+  @apply absolute inset-0 w-0 bg-primary/5 transition-all duration-300;
+}
+
+.service-card:hover::before {
+  @apply w-full;
+}
+
+/* Animation utilities */
+.animate-fade-up {
+  animation: fadeUp 0.5s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s ease-out forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
