@@ -2,11 +2,11 @@
 export const COMPANY_NAME = "Property Intel";
 export const COMPANY_DESCRIPTION = "Your trusted partner in property management and real estate services.";
 export const CONTACT_INFO = {
-  address: "123 London Road",
+  address: "",
   city: "London",
-  zipCode: "EC1A 1BB",
-  phone: "020 7123 4567",
-  email: "info@propertyintel.com"
+  zipCode: "",
+  phone: "075 8647 9847",
+  email: "Contact@property-intel.co.uk"
 };
 
 export const NAVIGATION_ITEMS = [
@@ -34,20 +34,20 @@ export const SERVICES = [
   {
     id: "maintenance",
     title: "Maintenance",
-    description: "24/7 maintenance support for all your property-related requirements.",
+    description: "24/7 maintenance support for all your property related requirements.",
     icon: "Wrench"
   },
   {
     id: "documentation",
     title: "Documentation",
-    description: "Professional handling of all property-related documentation and legal work.",
+    description: "Professional handling of all property related documentation and legal work.",
     icon: "FileText"
   }
 ];
 
 export const SOCIAL_LINKS = [
-  { name: "Facebook", url: "#", icon: "Facebook" },
-  { name: "Twitter", url: "#", icon: "Twitter" },
-  { name: "Instagram", url: "#", icon: "Instagram" },
-  { name: "LinkedIn", url: "#", icon: "Linkedin" }
+  { name: "Facebook", url: "https://www.facebook.com/profile.php?id=61560227601040", icon: "Facebook" },
+  { name: "Twitter", url: "https://x.com/Property_intel_", icon: "Twitter" },
+  { name: "Instagram", url: "https://www.instagram.com/property_intel/", icon: "Instagram" },
+  { name: "LinkedIn", url: "https://www.linkedin.com/company/property-intel-ltd", icon: "Linkedin" }
 ];
