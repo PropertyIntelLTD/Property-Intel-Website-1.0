@@ -11,7 +11,7 @@ const Home = () => {
       icon: Building,
       title: "Landlord Services",
       description: "Comprehensive property management solutions for property owners",
-      path: "/services/custom",
+      path: "/services/landlord",
       color: "bg-blue-100 text-blue-600",
     },
     {
@@ -32,14 +32,14 @@ const Home = () => {
       icon: KeyRound,
       title: "Custom Solutions",
       description: "Tailor-made solutions to meet your requirements",
-      path: "/services/landlord",
+      path: "/services/custom",
       color: "bg-red-100 text-red-600",
     },
   ];
 
   const testimonials = [
-    { name: "Sarah Johnson", role: "Property Investor", text: "Their professional service helped me grow my portfolio by 40% in just two years." },
-    { name: "Michael Chen", role: "Homeowner", text: "The most reliable and transparent real estate service I've ever used." }
+    { name: "Amit", role: "Property Investor", text: "I was struggling with finding suitable tenants for my property, property intel had moved so fast and rented out all 3 rooms in just over a week. Im very pleased." },
+    { name: "Michael", role: "Homeowner", text: "I received really good investment advice and have started the process of building my portfolio with property intel." }
   ];
 
 
@@ -227,6 +227,15 @@ const Home = () => {
       {/* About Section */}
       <section className="py-24 bg-gray-50" aria-labelledby="about-heading">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <motion.h2
+            id="about-heading"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-3xl font-bold tracking-tight text-gray-900 mb-12 text-center"
+          >
+            About Property Intel
+          </motion.h2>
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <motion.div 
               initial={{ opacity: 0, x: -20 }} 
@@ -234,7 +243,7 @@ const Home = () => {
               className="relative h-96 rounded-lg overflow-hidden"
             >
               <img 
-                src="/about-image.jpg" 
+                src="/src/about-image.jpg" 
                 alt="Our team at work in the office" 
                 className="h-full w-full object-cover" 
                 loading="lazy"
@@ -242,7 +251,7 @@ const Home = () => {
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }}>
               <p className="text-lg text-gray-700 mb-6">At <strong>Property Intel</strong> we operate with our core principles in mind: Ethical Investments, Transparency & Trust, Fair Profit, Risk Sharing and Avoiding Interest.</p>
-              <p className="text-lg text-gray-700 mb-6">At <strong>Property Intel</strong> we operate with our core principles in mind: Ethical Investments, Transparancy & Trust, Fair Profit, Risk Sharing and Avoiding Interest.</p>
+              <p className="text-lg text-gray-700 mb-6">With our fast repair guarantee, fully transparent processes and unwavering commitment to quality, you can trust us to deliver an exceptional service every time. </p>
               <p className="text-lg text-gray-700 mb-6">We know the London market inside out and have the right tools to maximise your ROI. Our comprehensive management services handle everything, giving you more time to do the things you love.</p>
               <div className="grid grid-cols-2 gap-8">
                 <div className="flex items-center">
