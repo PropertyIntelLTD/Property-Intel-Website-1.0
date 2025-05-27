@@ -1,1 +1,0 @@
-const e="Property Intel",o="Your trusted partner in property management and real estate services.",n={address:"123 London Road",city:"London",zipCode:"EC1A 1BB",phone:"020 7123 4567",email:"info@propertyintel.com"};export{e as C,o as a,n as b};

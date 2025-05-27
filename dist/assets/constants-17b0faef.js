@@ -1,0 +1,1 @@
+const e="Property Intel",t="Your trusted partner in property management and real estate services.",n={address:"",city:"London",zipCode:"",phone:"075 8647 9847",email:"Contact@property-intel.co.uk"};export{e as C,t as a,n as b};
